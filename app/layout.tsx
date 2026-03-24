@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "WeatherPro - Real-time Weather Pakistan",
-  description: "Beautiful, professional weather dashboard built with Next.js 14",
+  description:
+    "Beautiful, professional weather dashboard built with Next.js 14",
   icons: { icon: "/favicon.ico" },
 };
 

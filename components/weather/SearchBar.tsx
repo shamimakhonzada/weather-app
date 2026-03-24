@@ -1,4 +1,3 @@
-// components/weather/SearchBar.tsx
 "use client";
 
 import { Search, MapPin } from "lucide-react";

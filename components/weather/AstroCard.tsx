@@ -1,4 +1,3 @@
-// components/weather/AstroCard.tsx
 import type { Astro } from "@/types/weather";
 import { Sunrise, Sunset, Moon, MoonStar } from "lucide-react";
 
@@ -37,7 +36,9 @@ export function AstroCard({ astro }: AstroCardProps) {
             <Sunrise className="text-orange-400" size={26} />
             <div>
               <p className="text-sm text-slate-400">Sunrise</p>
-              <p className="text-2xl font-light tracking-tight">{astro.sunrise}</p>
+              <p className="text-2xl font-light tracking-tight">
+                {astro.sunrise}
+              </p>
             </div>
           </div>
 
@@ -45,7 +46,9 @@ export function AstroCard({ astro }: AstroCardProps) {
             <Sunset className="text-rose-400" size={26} />
             <div>
               <p className="text-sm text-slate-400">Sunset</p>
-              <p className="text-2xl font-light tracking-tight">{astro.sunset}</p>
+              <p className="text-2xl font-light tracking-tight">
+                {astro.sunset}
+              </p>
             </div>
           </div>
         </div>
@@ -68,8 +71,8 @@ export function AstroCard({ astro }: AstroCardProps) {
 
           {/* Progress Bar */}
           <div className="h-3 bg-slate-800 rounded-full overflow-hidden mb-6">
-            <div 
-              className="h-full bg-gradient-to-r from-purple-400 via-violet-400 to-fuchsia-400 transition-all duration-700"
+            <div
+              className="h-full bg-linear-to-r from-purple-400 via-violet-400 to-fuchsia-400 transition-all duration-700"
               style={{ width: `${moonIllum}%` }}
             />
           </div>
@@ -77,11 +80,15 @@ export function AstroCard({ astro }: AstroCardProps) {
           <div className="grid grid-cols-2 gap-6 text-sm">
             <div>
               <p className="text-slate-400">Moonrise</p>
-              <p className="font-mono text-lg tracking-wide">{astro.moonrise || "--:--"}</p>
+              <p className="font-mono text-lg tracking-wide">
+                {astro.moonrise || "--:--"}
+              </p>
             </div>
             <div>
               <p className="text-slate-400">Moonset</p>
-              <p className="font-mono text-lg tracking-wide">{astro.moonset || "--:--"}</p>
+              <p className="font-mono text-lg tracking-wide">
+                {astro.moonset || "--:--"}
+              </p>
             </div>
           </div>
         </div>

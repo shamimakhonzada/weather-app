@@ -1,4 +1,3 @@
-// components/weather/WeatherCard.tsx
 import type { WeatherData } from "@/types/weather";
 import { Clock, ThermometerSun } from "lucide-react";
 import Image from "next/image";
@@ -12,11 +11,13 @@ export function WeatherCard({ data }: WeatherCardProps) {
   const isDay = current.is_day === 1;
 
   return (
-    <div className={`rounded-3xl overflow-hidden border border-slate-700/50 shadow-2xl ${
-      isDay 
-        ? 'bg-gradient-to-br from-blue-900 to-indigo-950' 
-        : 'bg-gradient-to-br from-slate-900 to-zinc-950'
-    }`}>
+    <div
+      className={`rounded-3xl overflow-hidden border border-slate-700/50 shadow-2xl ${
+        isDay
+          ? "bg-linear-to-br from-blue-900 to-indigo-950"
+          : "bg-linear-to-br from-slate-900 to-zinc-950"
+      }`}
+    >
       <div className="p-10 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left: Temp & Description */}
         <div className="flex-1">
@@ -66,9 +67,18 @@ export function WeatherCard({ data }: WeatherCardProps) {
 
       {/* Bottom Bar */}
       <div className="bg-black/30 px-10 py-5 flex justify-between text-sm border-t border-slate-700/50">
-        <div>Wind: <span className="font-medium">{current.wind_kph} km/h {current.wind_dir}</span></div>
-        <div>Humidity: <span className="font-medium">{current.humidity}%</span></div>
-        <div>Visibility: <span className="font-medium">{current.vis_km} km</span></div>
+        <div>
+          Wind:{" "}
+          <span className="font-medium">
+            {current.wind_kph} km/h {current.wind_dir}
+          </span>
+        </div>
+        <div>
+          Humidity: <span className="font-medium">{current.humidity}%</span>
+        </div>
+        <div>
+          Visibility: <span className="font-medium">{current.vis_km} km</span>
+        </div>
       </div>
     </div>
   );

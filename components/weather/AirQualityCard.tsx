@@ -1,4 +1,3 @@
-// components/weather/AirQualityCard.tsx
 import type { AirQuality } from "@/types/weather";
 
 interface AirQualityCardProps {

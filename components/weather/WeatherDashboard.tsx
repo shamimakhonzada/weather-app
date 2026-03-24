@@ -22,14 +22,16 @@ export function WeatherDashboard() {
     try {
       const [currentRes, forecastRes] = await Promise.all([
         fetch(`/api/weather?city=${encodeURIComponent(searchCity)}`),
-        fetch(`/api/forecast?city=${encodeURIComponent(searchCity)}`)
+        fetch(`/api/forecast?city=${encodeURIComponent(searchCity)}`),
       ]);
 
       const currentJson = await currentRes.json();
       const forecastJson = await forecastRes.json();
 
-      if (!currentRes.ok) throw new Error(currentJson.error || "Current weather error");
-      if (!forecastRes.ok) throw new Error(forecastJson.error || "Forecast error");
+      if (!currentRes.ok)
+        throw new Error(currentJson.error || "Current weather error");
+      if (!forecastRes.ok)
+        throw new Error(forecastJson.error || "Forecast error");
 
       setCurrentData(currentJson);
       setForecastData(forecastJson);
@@ -57,7 +59,11 @@ export function WeatherDashboard() {
         </div>
       )}
 
-      {loading && <div className="text-center py-20 text-slate-400">Loading latest weather...</div>}
+      {loading && (
+        <div className="text-center py-20 text-slate-400">
+          Loading latest weather...
+        </div>
+      )}
 
       {!loading && currentData && (
         <>
